@@ -12,12 +12,17 @@ from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from core.views import UserViewSet
 from core.views import AcessoriosViewSet
 from core.views import CategoriaViewSet
+from core.views import CorViewSet
+from core.views import MarcaViewSet
 
 router = DefaultRouter()
 
+router.register(r"marca", MarcaViewSet)
+router.register(r"cor", CorViewSet)
 router.register(r"categoria", CategoriaViewSet)
 router.register(r"Acessorios", AcessoriosViewSet)
 router.register(r"users", UserViewSet, basename="users")
+
 
 urlpatterns = [
     path("admin/", admin.site.urls),
